@@ -118,10 +118,10 @@ export default function Galery() {
           ))}
         </div>
       </div>
-      {/* Show More Button */}
+      {/* See More Button */}
       <div className="w-full mx-auto flex justify-center my-10">
         <button className="bg-[#B04E75] text-white rounded-3xl py-2 px-6 md:py-3 md:px-8">
-          Show More
+          See More
         </button>
       </div>
     </div>

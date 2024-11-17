@@ -68,9 +68,12 @@ attractive options from leading companies.
               placeholder="What are you looking for"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === "Enter") handleSearch(); // Trigger search on Enter
+              }}
             />
             <button
-              className="px-4 py-2 bg-[#B04E75] rounded-lg text-white"
+              className="md:w-[154px] px-4 py-2 bg-[#B04E75] rounded-2xl text-white"
               onClick={handleSearch}
             >
               Search
@@ -80,21 +83,23 @@ attractive options from leading companies.
         <div className="relative inline-block text-left">
           <button
             onClick={toggleVisibility}
-            className={`w-[171px] py-4 mt-1 bg-white rounded-3xl text-[#B04E75] border-4 border-[#B04E75] transition-all duration-500 ease-in-out overflow-hidden ${
-              isVisible ? "h-56" : "h-20"
+            className={`w-full md:w-[171px] px-4 py-2 bg-white rounded-3xl text-[#B04E75] border-4 border-[#B04E75] transition-all duration-500 ease-in-out overflow-hidden ${
+              isVisible ? "h-56" : "h-12"
             }`}
           >
             <div className="text-center">
               {selectedFilter ? selectedFilter : "Filter"}
             </div>
-
-            {/* Dropdown content within button */}
             {isVisible && (
               <div className="pt-2 pb-4 text-center text-[#B04E75] space-y-1">
                 {filterOptions.map((filter) => (
                   <p
                     key={filter}
-                    onClick={() => handleFilterSelect(filter)}
+                    onClick={() =>
+                      setSelectedFilter(
+                        filter === selectedFilter ? null : filter
+                      )
+                    }
                     className={`cursor-pointer ${
                       selectedFilter === filter
                         ? "text-white bg-[#B04E75] rounded-lg px-2"
@@ -123,6 +128,13 @@ attractive options from leading companies.
             </div>
           ))}
         </div>
+      </div>
+
+      {/* See More Button */}
+      <div className="w-full mx-auto flex justify-center my-10">
+        <button className="bg-[#B04E75] text-white rounded-3xl py-2 px-6 md:py-3 md:px-8">
+          See More
+        </button>
       </div>
     </div>
   );

@@ -151,6 +151,13 @@ function Jobs() {
           </div>
         ))}
       </div>
+
+      {/* See More Button */}
+      <div className="w-full mx-auto flex justify-center my-10">
+        <button className="bg-[#B04E75] text-white rounded-3xl py-2 px-6 md:py-3 md:px-8">
+          See More
+        </button>
+      </div>
     </div>
   );
 }
