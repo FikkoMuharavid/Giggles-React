@@ -1,0 +1,161 @@
+/* Main container for gallery detail */
+.gallery-detail {
+    background: rgba(153, 153, 153, 0.26);
+    width: 90%;
+    max-width: 80%;
+    margin: 2rem auto;
+    padding-bottom: 20px;
+    border-radius: 2rem;
+    margin-top: 5rem;
+  }
+  
+  /* Profile Section */
+  .gallery-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 10rem;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .profile-picture {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .profile-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .collaborate-button {
+    background: #b04e75;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .collaborate-button:hover {
+    background: #9d3f63;
+  }
+  
+  /* Main Image */
+  .gallery-main-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .main-image {
+    width: 850px;
+    height: auto;
+    border-radius: 16px;
+  }
+  
+  /* Gallery Header */
+  .gallery-header {
+    display: flex;
+    margin: 20px 30px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  .gallery-title {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .gallery-icon {
+    width: 30px;
+    cursor: pointer;
+  }
+  
+  /* Description */
+  .gallery-description {
+    color: white;
+    font-size: 1rem;
+    line-height: 2;
+    width: 50%;
+    margin-right: auto;
+  }
+  
+  /* Reviews Section */
+  .reviews-section {
+    margin: 40px auto;
+    max-width: 80%;
+  }
+  
+  .review-card {
+    background: rgba(153, 153, 153, 0.26);
+    margin-bottom: 20px;
+    border-radius: 2rem;
+    padding: 20px;
+  }
+  
+  .review-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .review-profile-picture {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 2px solid white;
+  }
+  
+  .review-details {
+    flex: 1;
+  }
+  
+  .reviewer-name {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .review-star {
+    margin-top: 10px;
+    color: yellow;
+  }
+  .review-text {
+    color: white;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+  
+  .review-date {
+    color: gray;
+    font-size: 1rem;
+    text-align: right;
+  }
+  
+  /* More Designs Section */
+  .more-designs-section {
+    background: rgba(153, 153, 153, 0.26);
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .more-designs-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  

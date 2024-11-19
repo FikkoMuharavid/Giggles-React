@@ -2,62 +2,37 @@
 import { useEffect, useState } from "react";
 import Hero from "../../components/Hero";
 import SearchBox from "../../components/SearchBox";
-import JobsItemCard from "../../components/JobsItemCard";
-import JobCard from "../../components/JobCard";
+import Card from "../../components/Card";
 import { GaleryJson } from "../../api/galeryApi";
-import { useNavigate } from "react-router-dom";
+import "../../styles/gallery.css";
 import Heading from "../../components/Heading";
-import "../../styles/jobs.css";
-
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Footer from "../../components/Footer";
 
-function Jobs() {
-  const navigate = useNavigate();
+export default function Gallery() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedFilter, setSelectedFilter] = useState(null);
-  const [categories, setCategories] = useState([]);
-  const [jobs, setJobs] = useState([]);
-  const [filteredJobs, setFilteredJobs] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
+  const [selectedFilter, setSelectedFilter] = useState(null); // state for selected filter
 
-  useEffect(() => {
-    // Initialize categories and jobs data
-    const dataCategory = GaleryJson.getCategories();
-    const dataJobs = GaleryJson.getJobs();
-    setCategories(dataCategory);
-    setJobs(dataJobs);
-    setFilteredJobs(dataJobs); // Initialize filteredJobs with all jobs
-
-    // Initialize AOS animations
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
-
-  useEffect(() => {
-    // Combine filter and search query logic
-    let updatedJobs = jobs;
-
-    if (selectedFilter) {
-      updatedJobs = updatedJobs.filter(
-        (job) => job.category.toLowerCase() === selectedFilter.toLowerCase()
-      );
-    }
-
-    if (searchQuery) {
-      updatedJobs = updatedJobs.filter((job) =>
-        job.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    setFilteredJobs(updatedJobs);
-  }, [selectedFilter, searchQuery, jobs]);
+  const [data, setData] = useState([]);
+  const [isVisible, setIsVisible] = useState(false); // state for filter visibility
 
   const toggleVisibility = () => {
     setIsVisible((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const data = GaleryJson.getAllData();
+    setData(data);
+  }, []);
+
+  // Filtered data based on the search query and selected filter
+  const filteredData = data.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleSearch = () => {
+    if (selectedFilter == null) {
+      alert("Ops, tolong pilih kategori galery dulu!");
+    }
   };
 
   const filterOptions = [
@@ -71,11 +46,17 @@ function Jobs() {
     "Strategy",
   ];
 
+  const handleFilterSelect = (filter) => {
+    setSelectedFilter(filter === selectedFilter ? null : filter); // toggle filter selection
+  };
+
   return (
     <div>
       <Hero
-        title="Jobs Board"
-        subtitle="Find the best job vacancies here! Find your dream job with a variety of attractive options from leading companies. Register now and find the career opportunities that suit you."
+        title={"Gallery"}
+        subtitle={
+          "Get inspired by a rich and diverse collection of art. Explore our gallery now."
+        }
       >
         {/* Search and Filter */}
         <div
@@ -84,13 +65,13 @@ function Jobs() {
             width: "80%",
             gap: "5rem",
             alignItems: "center",
-            margin: "2rem auto",
           }}
         >
           <div style={{ flex: 1 }}>
             <SearchBox
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onSearch={handleSearch}
             />
           </div>
           <div
@@ -120,7 +101,7 @@ function Jobs() {
                   textAlign: "center",
                   fontSize: "1rem",
                   color: "#B04E75",
-                  width: "10rem",
+                  width: "171px",
                 }}
               >
                 {isVisible ? "Filter" : selectedFilter || "Filter"}
@@ -139,11 +120,7 @@ function Jobs() {
                   {filterOptions.map((filter) => (
                     <p
                       key={filter}
-                      onClick={() =>
-                        setSelectedFilter(
-                          filter === selectedFilter ? null : filter
-                        )
-                      }
+                      onClick={() => handleFilterSelect(filter)}
                       style={{
                         cursor: "pointer",
                         textAlign: "center",
@@ -167,41 +144,32 @@ function Jobs() {
         </div>
       </Hero>
 
+      {/* Content */}
       <section>
-        {/* Popular Jobs Category */}
         <Heading
-          title="Popular Jobs Category"
-          subtitle="Browse through a wide selection of popular job categories. Find your dream job today!"
-        />
-        <div className="grid-container">
-          {categories.map((item, index) => (
-            <div
-              key={index}
-              onClick={() => navigate("/jobs/category/" + item.name)}
-            >
-              <JobCard item={item} />
-            </div>
-          ))}
-        </div>
-
-        {/* Recent Posts */}
-        <Heading
-          title="Recent Posts"
-          subtitle="Check out the latest job vacancies posted by leading companies."
+          title="Gallery"
+          subtitle="Get inspired by a rich and diverse collection of art. Explore our gallery now."
         />
         <div className="content-container">
-          <div className="recent-posts">
-            {filteredJobs.map((item, index) => (
-              <JobsItemCard key={index} item={item} />
+          <div className="grid-container">
+            {filteredData.map((item, index) => (
+              <Card
+                key={index}
+                image={item.image}
+                name={item.name}
+                id={item.id}
+              />
             ))}
           </div>
         </div>
 
-        {/* Footer */}
+        {/* Show More Button */}
+        <div className="show-more-container">
+          <button className="show-more-button">Show More</button>
+        </div>
+
         <Footer />
       </section>
     </div>
   );
 }
-
-export default Jobs;
