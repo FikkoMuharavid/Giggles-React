@@ -37,6 +37,7 @@
 .register1 .shape2-container {
     display: flex;
     justify-content: space-between;
+    gap: 5%;
 }
 
 .register1 .shape2 {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "../styles/Login.css";
+import { Link } from "react-router-dom";
+import "../styles/Auth-Login.css";
 import "../styles/App.css";
 
 function Login() {
@@ -16,7 +17,7 @@ function Login() {
           <h2 style={{ paddingBottom: "2%", textAlign: "left" }}>Sign In</h2>
           <p>
             If you don’t have an account register <br /> You can{" "}
-            <a href="Register.html">&nbsp;Register Here !</a>
+            <Link to="/register1">&nbsp;Register Here !</Link>
           </p>
 
           <div className="email">

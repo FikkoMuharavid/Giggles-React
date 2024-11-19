@@ -1,9 +1,10 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/WelcomePage.css";
 
 function WelcomePage() {
   return (
-    <body className="welcome">
+    <div className="welcome">
       <div className="containerwelcome">
         <div className="logo">
           <img src="/Logo.png" alt="" />
@@ -43,9 +44,9 @@ function WelcomePage() {
             <br />
             <br />
             <center>
-              <a href="HomeGuest.html">
+              <NavLink to="/homeguest">
                 <h1> HOME </h1>
-              </a>
+              </NavLink>
               <br />
             </center>
             <center>
@@ -73,7 +74,7 @@ function WelcomePage() {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   );
 }
 
