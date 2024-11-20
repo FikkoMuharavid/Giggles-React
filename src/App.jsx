@@ -16,13 +16,13 @@ import ForgotPasw3 from "./pages/Auth-ForgotPasw3.jsx";
 import Notification from "./pages/Notification.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import PostCreation from "./pages/User-PostCreation.jsx";
-<<<<<<< HEAD
+
 import EditProfile from "./components/EditProfile"; 
 import SocialProfile from "./components/SocialProfile";
 import Resume from "./components/Resume";
 import WorkSpace from "./components/WorkSpace";
-=======
->>>>>>> db0f22c5dcedfe89a00ec38eac49f4fed6653963
+
+
 
 function App() {
   return (
