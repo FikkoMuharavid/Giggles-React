@@ -1,12 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
-import Hero from "../../components/Hero";
-import SearchBox from "../../components/SearchBox";
-import Card from "../../components/Card";
-import { GaleryJson } from "../../api/galeryApi";
-import "../../styles/gallery.css";
-import Heading from "../../components/Heading";
-import Footer from "../../components/Footer";
+import Hero from "../components/Hero";
+import SearchBox from "../components/SearchBox";
+import Card from "../components/Card";
+import { GaleryJson } from "../api/galeryApi";
+import "../styles/gallery.css";
+import Heading from "../components/Heading";
+import Footer from "../components/Footer";
 
 export default function Gallery() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -85,15 +85,18 @@ export default function Gallery() {
               onClick={toggleVisibility}
               style={{
                 backgroundColor: "white",
-                borderRadius: "1.5rem",
+                borderRadius: "2rem",
                 color: "#B04E75",
                 border: "4px solid #B04E75",
                 transition: "all 0.5s ease-in-out",
                 overflow: "hidden",
-                height: isVisible ? "16rem" : "3rem",
+                height: isVisible ? "16rem" : "3.5rem",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                justifyContent: "center",
+                fontWeight: "bold",
+                width: "154px",
               }}
             >
               <div
@@ -101,7 +104,8 @@ export default function Gallery() {
                   textAlign: "center",
                   fontSize: "1rem",
                   color: "#B04E75",
-                  width: "171px",
+                  width: "154px",
+                  fontSize: "1.2rem",
                 }}
               >
                 {isVisible ? "Filter" : selectedFilter || "Filter"}
@@ -113,7 +117,7 @@ export default function Gallery() {
                     backgroundColor: "white",
                     textAlign: "start",
                     color: "#B04E75",
-                    width: "10rem",
+                    width: "154px",
                     borderRadius: "0.5rem",
                   }}
                 >
@@ -151,7 +155,7 @@ export default function Gallery() {
           subtitle="Get inspired by a rich and diverse collection of art. Explore our gallery now."
         />
         <div className="content-container">
-          <div className="grid-container">
+          <div className="gallery-grid-container">
             {filteredData.map((item, index) => (
               <Card
                 key={index}

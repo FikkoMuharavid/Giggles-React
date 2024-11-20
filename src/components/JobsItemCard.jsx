@@ -1,6 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
 import { useNavigate, useParams } from "react-router-dom";
-import "../../styles/jobs-item-card.css";
+import "../styles/job-item-card.css";
 
 function JobsItemCard({ item }) {
   const navigate = useNavigate();

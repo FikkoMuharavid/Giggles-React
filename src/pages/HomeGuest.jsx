@@ -224,9 +224,8 @@ function HomeGuest() {
           </div>
         </div>
 
-        <Footer />  
+        <Footer />
       </section>
-      
     </div>
   );
 }

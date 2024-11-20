@@ -1,17 +1,17 @@
 "use client";
 import { useEffect, useState } from "react";
-import Hero from "../../components/Hero";
-import SearchBox from "../../components/SearchBox";
-import JobsItemCard from "../../components/JobsItemCard";
-import JobCard from "../../components/JobCard";
-import { GaleryJson } from "../../api/galeryApi";
+import Hero from "../components/Hero";
+import SearchBox from "../components/SearchBox";
+import JobsItemCard from "../components/JobsItemCard";
+import JobCard from "../components/JobCard";
+import { GaleryJson } from "../api/galeryApi";
 import { useNavigate } from "react-router-dom";
-import Heading from "../../components/Heading";
-import "../../styles/jobs.css";
+import Heading from "../components/Heading";
+import "../styles/jobs.css";
+import Footer from "../components/Footer";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Footer from "../../components/Footer";
 
 function Jobs() {
   const navigate = useNavigate();
@@ -104,15 +104,18 @@ function Jobs() {
               onClick={toggleVisibility}
               style={{
                 backgroundColor: "white",
-                borderRadius: "1.5rem",
+                borderRadius: "2rem",
                 color: "#B04E75",
                 border: "4px solid #B04E75",
                 transition: "all 0.5s ease-in-out",
                 overflow: "hidden",
-                height: isVisible ? "16rem" : "3rem",
+                height: isVisible ? "16rem" : "3.5rem",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
+                justifyContent: "center",
+                fontWeight: "bold",
+                width: "154px",
               }}
             >
               <div
@@ -120,7 +123,8 @@ function Jobs() {
                   textAlign: "center",
                   fontSize: "1rem",
                   color: "#B04E75",
-                  width: "10rem",
+                  width: "154px",
+                  fontSize: "1.2rem",
                 }}
               >
                 {isVisible ? "Filter" : selectedFilter || "Filter"}
@@ -132,7 +136,7 @@ function Jobs() {
                     backgroundColor: "white",
                     textAlign: "start",
                     color: "#B04E75",
-                    width: "10rem",
+                    width: "154px",
                     borderRadius: "0.5rem",
                   }}
                 >

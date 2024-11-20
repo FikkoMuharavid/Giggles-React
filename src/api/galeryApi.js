@@ -46,15 +46,15 @@ class GaleryJson {
   }
 
   static getJobById(jobId) {
-    console.log("job : " + jobId)
+    console.log("job : " + jobId);
     for (const category of categoryData) {
       const job = category.jobs.find((job) => job.id == jobId);
       if (job) {
-        job.category = category; 
+        job.category = category;
         return job;
       }
     }
-    return null; 
+    return null;
   }
 }
 

@@ -3,40 +3,49 @@ import { NavLink } from "react-router-dom";
 import "../styles/navbar.css";
 
 function NavbarGuest() {
+  const navItems = [
+    { name: "Home", path: "/homeGuest" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Jobs", path: "/jobs" },
+    { name: "About Us", path: "/" },
+  ];
+
+  const authButtons = [
+    { name: "Login", path: "/login" },
+    { name: "Sign Up", path: "/register" },
+  ];
+
   return (
     <nav>
       <div className="navMenu">
-        <NavLink to="/homeGuest" className={({ isActive }) => isActive ? "menuActive" : "menuNonActive"}>
-          Home
-        </NavLink>
-        <a href="">
-          <div className="menuNonActive">Gallery</div>
-        </a>
-        <a href="">
-          <div className="menuNonActive">Jobs</div>
-        </a>
-        <a href="About.html">
-          <div className="menuNonActive">About Us</div>
-        </a>
+        {navItems.map((item, index) => (
+          <NavLink
+            key={index}
+            to={item.path}
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            {item.name}
+          </NavLink>
+        ))}
       </div>
-
-      
 
       <div className="navGiggle">
         <div className="giggle">Giggle’s</div>
       </div>
 
       <div className="navButton">
-        <div className="login">
-          <div className="fontButton">
-            <a href="login.html"> Login </a>
+        {authButtons.map((button, index) => (
+          <div
+            key={index}
+            className={button.name === "Login" ? "login" : "signUp"}
+          >
+            <div className="fontButton">
+              <NavLink to={button.path}>{button.name}</NavLink>
+            </div>
           </div>
-        </div>
-        <div className="signUp">
-          <div className="fontButton">
-            <a href="Register.html">Sign Up </a>
-          </div>
-        </div>
+        ))}
       </div>
     </nav>
   );

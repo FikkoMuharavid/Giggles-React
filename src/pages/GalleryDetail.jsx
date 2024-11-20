@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { GaleryJson } from "../../api/galeryApi";
+import { GaleryJson } from "../api/galeryApi";
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
-import Carousel from "../../components/Carousel";
-import "../../styles/gallery-detail.css";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import Carousel from "../components/Carousel";
+import "../styles/gallery-detail.css";
+import Navbar from "../components/NavbarGuest";
+import Footer from "../components/Footer";
 
 const GalleryDetail = () => {
   const params = useParams();
@@ -44,7 +44,11 @@ const GalleryDetail = () => {
       <div className="gallery-detail">
         <div className="gallery-profile">
           <div className="profile-header">
-            <img alt="profile" className="profile-picture" src="/profile.png" />
+            <img
+              alt="profile"
+              className="profile-picture"
+              src="/images/profile.png"
+            />
             <h3 className="profile-name">Kylie Jenner - Designer</h3>
             <button className="collaborate-button">Let's Collaborate</button>
           </div>
@@ -81,7 +85,7 @@ const GalleryDetail = () => {
               <img
                 alt="profile"
                 className="review-profile-picture"
-                src="/profile.png"
+                src="/images/profile.png"
               />
               <div className="review-details">
                 <h4 className="reviewer-name">{review.name}</h4>

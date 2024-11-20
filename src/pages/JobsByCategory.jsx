@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
-import { GaleryJson } from "../../api/galeryApi";
+import { GaleryJson } from "../api/galeryApi";
 
-import Hero from "../../components/Hero";
-import JobsItemCard from "../../components/JobsItemCard";
-import SearchBox from "../../components/SearchBox";
-import "../../styles/jobs-by-category.css";
-import Heading from "../../components/Heading";
-import Footer from "../../components/Footer";
+import Hero from "../components/Hero";
+import JobsItemCard from "../components/JobsItemCard";
+import SearchBox from "../components/SearchBox";
+import "../styles/jobs-by-category.css";
+import Heading from "../components/Heading";
+import Footer from "../components/Footer";
 
 function JobsByCategory() {
   const params = useParams();

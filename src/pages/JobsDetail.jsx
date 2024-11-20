@@ -1,11 +1,11 @@
 "use client";
-import { GaleryJson } from "../../api/galeryApi";
+import { GaleryJson } from "../api/galeryApi";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import "../../styles/job-details.css";
-import Spinner from "../../components/Spiner";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
+import "../styles/job-detail.css";
+import Spinner from "../components/Spiner";
+import Navbar from "../components/NavbarUser";
+import Footer from "../components/Footer";
 
 function JobsDetail() {
   const params = useParams();

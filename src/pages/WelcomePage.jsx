@@ -50,26 +50,26 @@ function WelcomePage() {
               <br />
             </center>
             <center>
-              <a href="">
+              <NavLink to="/gallery">
                 <h1> GALLERY &nbsp;</h1>
-              </a>
-              <a href="">
+              </NavLink>
+              <NavLink to="/jobs">
                 <h1> / &nbsp;JOBS </h1>
-              </a>
+              </NavLink>
               <br />
             </center>
             <center>
-              <a href="user-post.html">
+              <NavLink to="/">
                 <h1> PROFILE &nbsp;</h1>
-              </a>
-              <a href="About.html">
+              </NavLink>
+              <NavLink to="/">
                 <h1> / &nbsp;ABOUT US </h1>
-              </a>
+              </NavLink>
             </center>
             <center>
-              <a href="Notification.html">
+              <NavLink to="/">
                 <h1> NOTIFICATION </h1>
-              </a>
+              </NavLink>
             </center>
           </div>
         </div>
