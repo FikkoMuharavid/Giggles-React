@@ -7,12 +7,12 @@ function NavbarGuest() {
     { name: "Home", path: "/homeGuest" },
     { name: "Gallery", path: "/gallery" },
     { name: "Jobs", path: "/jobs" },
-    { name: "About Us", path: "/" },
+    { name: "About Us", path: "/aboutus" },
   ];
 
   const authButtons = [
     { name: "Login", path: "/login" },
-    { name: "Sign Up", path: "/register" },
+    { name: "Sign Up", path: "/register1" },
   ];
 
   return (

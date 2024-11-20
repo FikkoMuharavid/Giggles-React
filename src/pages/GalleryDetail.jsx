@@ -63,11 +63,23 @@ const GalleryDetail = () => {
 
           <div className="gallery-header">
             <h2 className="gallery-title">{galery.name}</h2>
-            <img
-              src="/images/category/Share.png"
-              className="gallery-icon"
-              alt="share"
-            />
+            <div className="gallery-icons">
+              <img
+                src="/images/category/Collection.png"
+                className="gallery-icon"
+                alt="share"
+              />
+              <img
+                src="/images/category/Share.png"
+                className="gallery-icon"
+                alt="share"
+              />
+              <img
+                src="/images/category/Edite.png"
+                className="gallery-icon"
+                alt="share"
+              />
+            </div>
           </div>
 
           <p className="gallery-description">
