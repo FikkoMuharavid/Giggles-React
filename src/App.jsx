@@ -44,14 +44,11 @@ function App() {
         <Route path="/jobs/category/:category" element={<JobsByCategory />} />
         <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="/postcreation" element={<PostCreation />} />
-<<<<<<< HEAD
         <Route path="/EditProfile" element={<EditProfile />} />
       <Route path="/SocialProfile" element={<SocialProfile />} />
       <Route path="/Resume" element={<Resume/>} />
       <Route path="/WorkSpace" element={<WorkSpace/>} />
 
-=======
->>>>>>> db0f22c5dcedfe89a00ec38eac49f4fed6653963
       </Routes>
     </BrowserRouter>
   );
