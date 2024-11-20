@@ -21,6 +21,10 @@ import EditProfile from "./components/EditProfile";
 import SocialProfile from "./components/SocialProfile";
 import Resume from "./components/Resume";
 import WorkSpace from "./components/WorkSpace";
+import Post from "./components/Post"; 
+import Collection from "./components/Collection";
+import Stars from "./components/Stars";
+import Contacts from "./components/Contacts";
 
 
 
@@ -48,6 +52,11 @@ function App() {
       <Route path="/SocialProfile" element={<SocialProfile />} />
       <Route path="/Resume" element={<Resume/>} />
       <Route path="/WorkSpace" element={<WorkSpace/>} />
+      <Route path="/Post" element={<Post />} />
+        <Route path="/Collection" element={<Collection />} />
+        <Route path="/Stars" element={<Stars />} />
+        <Route path="/Contacts" element={<Contacts />} />
+
 
       </Routes>
     </BrowserRouter>
