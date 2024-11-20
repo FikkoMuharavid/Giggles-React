@@ -24,6 +24,13 @@ import CompanyJobs from "./pages/Company-JobList.jsx";
 import CompanyEditAbout from "./pages/Company-EditAbout.jsx";
 import CompanyEditPostJob from "./pages/Company-EditPostJob.jsx";
 import CompanyEditProfile from "./pages/Company-EditProfile.jsx";
+<<<<<<< HEAD
+import EditProfile from "./components/EditProfile"; 
+import SocialProfile from "./components/SocialProfile";
+import Resume from "./components/Resume";
+import WorkSpace from "./components/WorkSpace";
+=======
+>>>>>>> db0f22c5dcedfe89a00ec38eac49f4fed6653963
 
 function App() {
   return (
@@ -53,6 +60,11 @@ function App() {
         <Route path="/company-edit-about" element={<CompanyEditAbout />} />
         <Route path="/company-edit-postjob" element={<CompanyEditPostJob />} />
         <Route path="/company-edit-profile" element={<CompanyEditProfile />} />
+        <Route path="/EditProfile" element={<EditProfile />} />
+      <Route path="/SocialProfile" element={<SocialProfile />} />
+      <Route path="/Resume" element={<Resume/>} />
+      <Route path="/WorkSpace" element={<WorkSpace/>} />
+
       </Routes>
     </BrowserRouter>
   );
