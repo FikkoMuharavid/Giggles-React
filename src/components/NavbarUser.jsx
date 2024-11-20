@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/navbar.css";
 
 const NavbarUser = () => {
@@ -9,29 +10,49 @@ const NavbarUser = () => {
   };
 
   const closeDropdown = (event) => {
-    // Tutup dropdown jika klik terjadi di luar elemen .profile-icon dan dropdown menu
-    if (!event.target.closest(".profile-icon") && !event.target.closest(".dropdown-menu")) {
+    // Close dropdown if clicked outside profile icon and dropdown menu
+    if (
+      !event.target.closest(".profile-icon") &&
+      !event.target.closest(".dropdown-menu")
+    ) {
       setDropdownOpen(false);
     }
   };
 
-  // Tambah event listener saat komponen mount dan bersihkan saat komponen unmount
   useEffect(() => {
     document.addEventListener("click", closeDropdown);
 
-    // Bersihkan event listener saat komponen unmount
     return () => {
       document.removeEventListener("click", closeDropdown);
     };
   }, []);
 
+  const navItems = [
+    { name: "Home", path: "/homeguest" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Jobs", path: "/jobs" },
+    { name: "About Us", path: "/" },
+  ];
+
+  const dropdownItems = [
+    { name: "Profile", path: "/user-post", icon: "bi bi-person" },
+    { name: "Sign Out", path: "#", icon: "bi bi-box-arrow-right" },
+  ];
+
   return (
     <nav>
       <div className="navMenu">
-        <a href="HomeUser.html"><div className="menuActive">Home</div></a>
-        <a href=""><div className="menuNonActive">Gallery</div></a>
-        <a href=""><div className="menuNonActive">Jobs</div></a>
-        <a href="About.html"><div className="menuNonActive">About Us</div></a>
+        {navItems.map((item, index) => (
+          <NavLink
+            key={index}
+            to={item.path}
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            {item.name}
+          </NavLink>
+        ))}
       </div>
 
       <div className="navGiggle">
@@ -40,28 +61,30 @@ const NavbarUser = () => {
 
       <div className="navRight">
         <div className="notification">
-          <a href="Notification.html">
-            <img src="src/images/icnNotification.png" alt="" style={{ width: "30px" }} />
-          </a>
+          <NavLink to="/notification">
+            <img
+              src="src/images/icnNotification.png"
+              alt="Notification"
+              style={{ width: "30px" }}
+            />
+          </NavLink>
         </div>
         <div className="profile">
           <img
             src="src/images/profile.png"
             className="profile-icon"
-            alt=""
+            alt="Profile"
             style={{ width: "75px" }}
             onClick={toggleDropdown}
           />
           {dropdownOpen && (
             <div className="dropdown-menu" style={{ zIndex: 10000 }}>
-              <a href="user-post.html" className="dropdown-item">
-                <span className="bi bi-person"></span>
-                <p>Profile</p>
-              </a>
-              <a href="#" className="dropdown-item">
-                <span className="bi bi-box-arrow-right"></span>
-                <p>Sign Out</p>
-              </a>
+              {dropdownItems.map((item, index) => (
+                <NavLink key={index} to={item.path} className="dropdown-item">
+                  <span className={item.icon}></span>
+                  <p>{item.name}</p>
+                </NavLink>
+              ))}
             </div>
           )}
         </div>

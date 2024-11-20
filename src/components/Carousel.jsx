@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import "../styles/carousel.css";
 
 const Carousel = ({ items }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -15,47 +17,66 @@ const Carousel = ({ items }) => {
   };
 
   return (
-    <div className="relative flex items-center justify-center w-full h-80 md:h-96 lg:h-[500px]">
-      <button
-        onClick={prevSlide}
-        className="absolute -left-4 md:-left-6 text-white bg-[#B04E75] p-2 rounded-full"
-        style={{ zIndex: 999 }}
-      >
-        <FaChevronLeft size={24} />
-      </button>
+    <div className="containerCarousel">
+      {/* Left Slider Button */}
+      <div className="sliderLeft" onClick={prevSlide}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="29"
+          viewBox="0 0 16 29"
+          fill="none"
+        >
+          <path
+            d="M14.125 1.375L1 14.5L14.125 27.625"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
 
-      <div className="overflow-hidden w-full">
+      {/* Carousel Cards */}
+      <div className="carouselCards">
         <div
-          className="flex transition-transform duration-500 ease-in-out gap-10 px-20"
+          className="carouselSlider"
           style={{
             transform: `translateX(-${(currentIndex / items.length) * 100}%)`,
-            width: `${(items.length / itemsPerView) * 100}%`,
+            width: `${items.length * 100}%`,
           }}
         >
           {items.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-shrink-0 flex-col bg-[#99999926]  rounded-[40px] overflow-hidden pb-10 "
-            >
-              <img
-                src={item.image}
-                alt={item.type}
-                className="w-[340px] h-[326px] object-cover"
-              />
-              <p className="mt-2 md:mt-4 text-base md:text-lg lg:text-xl text-white font-semibold text-center">
-                {item.name}
-              </p>
+            <div key={index} className="card">
+              <img src={item.image} alt={item.text} className="imgCard" />
+              <div className="txtCard">{item.text}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <button
-        onClick={nextSlide}
-        className="absolute -right-2 md:-right-6 text-white bg-[#B04E75] p-2 rounded-full"
-        style={{ zIndex: 999 }}
-      >
-        <FaChevronRight size={24} />
+      {/* Right Slider Button */}
+      <div className="sliderRight" onClick={nextSlide}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="29"
+          viewBox="0 0 16 29"
+          fill="none"
+        >
+          <path
+            d="M1.875 27.625L15 14.5L1.875 1.375"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* "See More" Button */}
+      <button className="seeMoreBtn" style={{ marginTop: "1%" }}>
+        See More
       </button>
     </div>
   );

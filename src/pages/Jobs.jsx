@@ -1,50 +1,63 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import SearchBox from "../components/SearchBox";
-import JobsCard from "../components/JobsCard";
-import { GaleryJson } from "../api/galeryApi";
 import JobsItemCard from "../components/JobsItemCard";
+import JobCard from "../components/JobCard";
+import { GaleryJson } from "../api/galeryApi";
 import { useNavigate } from "react-router-dom";
+import Heading from "../components/Heading";
+import "../styles/jobs.css";
+import Footer from "../components/Footer";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Jobs() {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [categories, setCategories] = useState([]);
-  const [isVisible, setIsVisible] = useState(false);
   const [jobs, setJobs] = useState([]);
   const [filteredJobs, setFilteredJobs] = useState([]);
-
-  const toggleVisibility = () => setIsVisible((prev) => !prev);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Initialize categories and jobs data
     const dataCategory = GaleryJson.getCategories();
     const dataJobs = GaleryJson.getJobs();
     setCategories(dataCategory);
     setJobs(dataJobs);
     setFilteredJobs(dataJobs); // Initialize filteredJobs with all jobs
 
+    // Initialize AOS animations
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Whether animation should happen only once
+      duration: 1000,
+      once: true,
     });
   }, []);
 
   useEffect(() => {
-    if (selectedFilter != null) {
-      navigate("/jobs/category/" + selectedFilter);
-    }
-  }, [selectedFilter, navigate]);
+    // Combine filter and search query logic
+    let updatedJobs = jobs;
 
-  const handleSearch = () => {
-    // Ensure jobs array is filtered based on search query
-    const searchResults = jobs.filter((job) =>
-      job.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    console.log("Search Results:", searchResults); // Debug line
-    setFilteredJobs(searchResults);
+    if (selectedFilter) {
+      updatedJobs = updatedJobs.filter(
+        (job) => job.category.toLowerCase() === selectedFilter.toLowerCase()
+      );
+    }
+
+    if (searchQuery) {
+      updatedJobs = updatedJobs.filter((job) =>
+        job.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+
+    setFilteredJobs(updatedJobs);
+  }, [selectedFilter, searchQuery, jobs]);
+
+  const toggleVisibility = () => {
+    setIsVisible((prev) => !prev);
   };
 
   const filterOptions = [
@@ -63,109 +76,134 @@ function Jobs() {
       <Hero
         title="Jobs Board"
         subtitle="Find the best job vacancies here! Find your dream job with a variety of attractive options from leading companies. Register now and find the career opportunities that suit you."
-      />
-      <div className="flex w-full items-center justify-center gap-5 mt-20 mb-36">
-        <SearchBox className="w-full">
-          <div className="flex items-center gap-3 w-full">
-            <FaSearch color="#9D9D9D" />
-            <input
-              className="bg-transparent w-full py-2 ring-transparent border-none focus:outline-none focus:ring-0 text-[#9D9D9D]"
-              placeholder="What are you looking for"
+      >
+        {/* Search and Filter */}
+        <div
+          style={{
+            display: "flex",
+            width: "80%",
+            gap: "5rem",
+            alignItems: "center",
+            margin: "2rem auto",
+          }}
+        >
+          <div style={{ flex: 1 }}>
+            <SearchBox
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={(e) => {
-                if (e.key === "Enter") handleSearch(); // Trigger search on Enter
-              }}
             />
+          </div>
+          <div
+            style={{
+              flex: "0 0 auto",
+              position: "relative",
+              display: "inline-block",
+            }}
+          >
             <button
-              className="md:w-[154px] px-4 py-2 bg-[#B04E75] rounded-2xl text-white"
-              onClick={handleSearch}
+              onClick={toggleVisibility}
+              style={{
+                backgroundColor: "white",
+                borderRadius: "2rem",
+                color: "#B04E75",
+                border: "4px solid #B04E75",
+                transition: "all 0.5s ease-in-out",
+                overflow: "hidden",
+                height: isVisible ? "16rem" : "3.5rem",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                fontWeight: "bold",
+                width: "154px",
+              }}
             >
-              Search
+              <div
+                style={{
+                  textAlign: "center",
+                  fontSize: "1rem",
+                  color: "#B04E75",
+                  width: "154px",
+                  fontSize: "1.2rem",
+                }}
+              >
+                {isVisible ? "Filter" : selectedFilter || "Filter"}
+              </div>
+
+              {isVisible && (
+                <div
+                  style={{
+                    backgroundColor: "white",
+                    textAlign: "start",
+                    color: "#B04E75",
+                    width: "154px",
+                    borderRadius: "0.5rem",
+                  }}
+                >
+                  {filterOptions.map((filter) => (
+                    <p
+                      key={filter}
+                      onClick={() =>
+                        setSelectedFilter(
+                          filter === selectedFilter ? null : filter
+                        )
+                      }
+                      style={{
+                        cursor: "pointer",
+                        textAlign: "center",
+                        backgroundColor:
+                          selectedFilter === filter ? "#B04E75" : "transparent",
+                        color: selectedFilter === filter ? "white" : "#B04E75",
+                        borderRadius:
+                          selectedFilter === filter ? "0.5rem" : "0",
+                        padding: ".1rem",
+                        width: "100%",
+                        fontSize: "1rem",
+                      }}
+                    >
+                      {filter}
+                    </p>
+                  ))}
+                </div>
+              )}
             </button>
           </div>
-        </SearchBox>
-        <div className="relative inline-block text-left">
-          <button
-            onClick={toggleVisibility}
-            className={`w-full md:w-[171px] px-4 py-2 bg-white rounded-3xl text-[#B04E75] border-4 border-[#B04E75] transition-all duration-500 ease-in-out overflow-hidden ${
-              isVisible ? "h-56" : "h-12"
-            }`}
-          >
-            <div className="text-center">
-              {selectedFilter ? selectedFilter : "Filter"}
-            </div>
-            {isVisible && (
-              <div className="pt-2 pb-4 text-center text-[#B04E75] space-y-1">
-                {filterOptions.map((filter) => (
-                  <p
-                    key={filter}
-                    onClick={() =>
-                      setSelectedFilter(
-                        filter === selectedFilter ? null : filter
-                      )
-                    }
-                    className={`cursor-pointer ${
-                      selectedFilter === filter
-                        ? "text-white bg-[#B04E75] rounded-lg px-2"
-                        : ""
-                    }`}
-                  >
-                    {filter}
-                  </p>
-                ))}
-              </div>
-            )}
-          </button>
         </div>
-      </div>
+      </Hero>
 
-      <div className="bg-[#99999926] w-[100%] py-10 mt-10 mx-auto">
-        <h1 className="text-2xl font-bold text-white text-shadow-glow text-center my-auto">
-          Popular Jobs Category
-        </h1>
-      </div>
+      <section>
+        {/* Popular Jobs Category */}
+        <Heading
+          title="Popular Jobs Category"
+          subtitle="Browse through a wide selection of popular job categories. Find your dream job today!"
+        />
+        <div className="grid-container">
+          {categories.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => navigate("/jobs/category/" + item.name)}
+            >
+              <JobCard item={item} />
+            </div>
+          ))}
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mx-4 sm:mx-8 md:mx-20">
-        {categories.map((item, index) => (
-          <div
-            key={index}
-            className="cursor-pointer"
-            onClick={() => navigate("/jobs/category/" + item.name)}
-          >
-            <JobsCard item={item} />
+        {/* Recent Posts */}
+        <Heading
+          title="Recent Posts"
+          subtitle="Check out the latest job vacancies posted by leading companies."
+        />
+        <div className="content-container">
+          <div className="recent-posts">
+            {filteredJobs.map((item, index) => (
+              <JobsItemCard key={index} item={item} />
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
 
-      <div className="bg-[#99999926] w-[100%] py-10 mt-10 mx-auto">
-        <h1 className="text-2xl font-bold text-white text-shadow-glow text-center my-auto">
-          Recent Post
-        </h1>
-      </div>
-
-      <div className="mt-20 mx-4 sm:mx-8 md:mx-20">
-        {filteredJobs.map((item, index) => (
-          <div className="mt-10" key={index}>
-            <JobsItemCard item={item} />
-          </div>
-        ))}
-      </div>
-
-      {/* See More Button */}
-      <div className="w-full mx-auto flex justify-center my-10">
-        <button className="bg-[#B04E75] text-white rounded-3xl py-2 px-6 md:py-3 md:px-8">
-          See More
-        </button>
-      </div>
-    </div>
-  );
-}
-
-function About() {
-  return (
-    <div>
-      <h2 className="text-blue-400">About Page</h2>
+        {/* Footer */}
+        <Footer />
+      </section>
     </div>
   );
 }
