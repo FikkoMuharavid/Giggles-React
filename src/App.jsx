@@ -16,7 +16,10 @@ import ForgotPasw3 from "./pages/Auth-ForgotPasw3.jsx";
 import Notification from "./pages/Notification.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
 import PostCreation from "./pages/User-PostCreation.jsx";
-
+import EditProfile from "./components/EditProfile"; 
+import SocialProfile from "./components/SocialProfile";
+import Resume from "./components/Resume";
+import WorkSpace from "./components/WorkSpace";
 
 function App() {
   return (
@@ -38,7 +41,11 @@ function App() {
         <Route path="/jobs/category/:category" element={<JobsByCategory />} />
         <Route path="/gallery/:id" element={<GalleryDetail />} />
         <Route path="/postcreation" element={<PostCreation />} />
-        
+        <Route path="/EditProfile" element={<EditProfile />} />
+      <Route path="/SocialProfile" element={<SocialProfile />} />
+      <Route path="/Resume" element={<Resume/>} />
+      <Route path="/WorkSpace" element={<WorkSpace/>} />
+
       </Routes>
     </BrowserRouter>
   );
