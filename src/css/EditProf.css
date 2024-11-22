@@ -623,10 +623,10 @@ input {
 .containerEditProfileup2{
   position: relative;
   z-index: 5; /* Nilai lebih rendah dari .header */
-  top: 20px;
-  margin: -4% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
+  top: 30px;
+  margin: 3% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
   width: 90vw; /* Mengatur lebar menjadi 90% dari viewport */
-  height: 500vh;
+  height: 200vh;
   max-height: 700px;
   background: rgba(153, 153, 153, 0.26);
   filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));
@@ -648,10 +648,10 @@ input {
 .containerEditProfileup3{
   position: relative;
   z-index: 5; /* Nilai lebih rendah dari .header */
-  top: 20px;
-  margin: -4% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
+  top: 30px;
+  margin: 3% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
   width: 90vw; /* Mengatur lebar menjadi 90% dari viewport */
-  height: 500vh;
+  height: 200vh;
   max-height: 700px;
   background: rgba(153, 153, 153, 0.26);
   filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));

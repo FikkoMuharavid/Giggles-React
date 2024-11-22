@@ -6,9 +6,18 @@ import NavbarUser from "../components/NavbarUser";
 import Headeruser from "../components/Headeruser";
 
 function Resume() {
+  // State to store the uploaded resume
+  const [resume, setResume] = useState(null);
 
+  // Function to handle file upload
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setResume(file);
+    }
+  };
 
-  return ( // Make sure this return statement is present
+  return (
     <div>
       {/* NavbarUser and HeaderUser should be rendered correctly */}
       <NavbarUser />
@@ -16,7 +25,7 @@ function Resume() {
 
       <div className="containerEditProfileup2">
         <div className="containerEdit1">
-          <div className="new-profile1">
+          <div className="">
             <h3>Resume</h3>
             <div className="divider"></div>
             <div className="form-grid">
@@ -37,9 +46,13 @@ function Resume() {
                     Upload Resume
                   </button>
                 </label>
+
+                {/* Display selected file name */}
                 {resume && <p>File selected: {resume.name}</p>}
               </div>
             </div>
+
+            {/* Save Profile Button */}
             <button className="buttonSave">Save Profile</button>
           </div>
         </div>

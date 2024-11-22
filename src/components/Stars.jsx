@@ -1,61 +1,20 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "/src/css/style.css";
-import "/src/css/navbar.css";
 import "/src/css/postUser.css";
+import NavbarUser from "/src/components/NavbarEdit-Company"; 
+import Headeruser from "/src/components/HeaderUser";
 
 function Stars() {
   const navigate = useNavigate();
 
+
   return (
     <div>
-      <nav>
-        <div className="navMenu">
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/gallery"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Gallery
-          </NavLink>
-          <NavLink
-            to="/jobs"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Jobs
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            About Us
-          </NavLink>
-        </div>
+      <NavbarEdit-Company />
 
-        <div className="navGiggle">
-          <div className="giggle">Giggle’s</div>
-        </div>
-
-        {/* Button Edit */}
-        <div className="navRight">
-          <button className="signUp" onClick={() => navigate("/EditProfile")}>
-            Edit
-          </button>
-        </div>
-      </nav>
+{/* Tambahkan HeaderUser di bawah Navbar */}
+<Headeruser />
 
       {/* Profile Section */}
       <div className="containerPoto">

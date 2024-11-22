@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom"; // Import NavLink dari React Router
 import "/src/css/style.css";
-import "/src/css/navbar.css";
+
 import "/src/css/EditProf.css";
+import NavbarUser from "/src/components/NavbarUser"; // Impor NavbarUser
+import Headeruser from "/src/components/Headeruser";
 
 function SocialProfile() {
   // Dropdown toggle function
@@ -35,104 +37,15 @@ function SocialProfile() {
 
   return (
     <div>
+    
+     
+
       {/* Navigation Bar */}
-      <nav>
-        <div className="navMenu">
-          <NavLink to="/home" activeClassName="menuActive" className="menuNonActive">
-            Home
-          </NavLink>
-          <NavLink to="/gallery" activeClassName="menuActive" className="menuNonActive">
-            Gallery
-          </NavLink>
-          <NavLink to="/jobs" activeClassName="menuActive" className="menuNonActive">
-            Jobs
-          </NavLink>
-          <NavLink to="/about" activeClassName="menuActive" className="menuNonActive">
-            About Us
-          </NavLink>
-        </div>
+      {/* Call NavbarUser component */}
+      <NavbarUser />  
 
-        <div className="navGiggle">
-          <div className="giggle">Giggle’s</div>
-        </div>
-
-        <div className="navRight">
-          <div className="notification">
-            <a href="Notification.html">
-              <img
-                src="/src/image/icnNotification.png"
-                alt="Notification Icon"
-                style={{ width: "30px" }}
-              />
-            </a>
-          </div>
-          <div className="profile">
-            <img
-              src="/src/image/profile.png"
-              className="profile-icon"
-              alt="Profile Icon"
-              style={{ width: "75px", cursor: "pointer" }}
-              onClick={toggleDropdown}
-            />
-            <div
-              className="dropdown-menu"
-              id="dropdownMenu"
-              style={{ zIndex: 10000, display: "none" }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <a href="user-post.html" className="dropdown-item">
-                <span className="bi bi-person"></span>
-                <p>Profile</p>
-              </a>
-              <a href="#" className="dropdown-item">
-                <span className="bi bi-box-arrow-right"></span>
-                <p>Sign Out</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Header Section */}
-      <div className="header">
-        <div className="containerHeader">
-          <NavLink
-            to="/EditProfile"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Edit Profile
-          </NavLink>
-          <NavLink
-            to="/SocialProfile"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Social Profile
-          </NavLink>
-          <NavLink
-            to="/Resume"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Resume
-          </NavLink>
-          <NavLink
-            to="/WorkSpace"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Work Space
-          </NavLink>
-        </div>
-        <hr
-          style={{ margin: "0 2%", marginTop: "-0.5%", borderWidth: "2px" }}
-        />
-      </div>
+      {/* Call HeaderUser component */}
+      <Headeruser />
 
       {/* New Social Profile Section */}
       <div className="containerEditProfileup2">
