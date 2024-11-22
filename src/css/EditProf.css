@@ -85,7 +85,7 @@ body {
   border-radius: 22px;
 }
 
-.header {
+/* .header {
   position: relative;
   margin-top: 2%;
   left: 50%;
@@ -99,7 +99,7 @@ body {
   z-index: 10;
   overflow: ; 
   white-space: nowrap;
-}
+} */
 
 .containerHeader {
   display: flex;

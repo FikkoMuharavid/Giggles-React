@@ -25,11 +25,9 @@
 
 .header-item {
   font-size: 25px;
+  font-style: normal;
   font-weight: 400;
-  white-space: nowrap; /* Mencegah teks membungkus */
-  line-height: normal;
-  flex-grow: 0; /* Mencegah pertumbuhan */
-  flex-shrink: 0; /* Mencegah penyusutan */
+  line-height: normal; /* Mencegah penyusutan */
 }
 
 .header-item.active {

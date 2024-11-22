@@ -27,14 +27,14 @@ import CompanyJobs from "./pages/Company-JobList.jsx";
 import CompanyEditAbout from "./pages/Company-EditAbout.jsx";
 import CompanyEditPostJob from "./pages/Company-EditPostJob.jsx";
 import CompanyEditProfile from "./pages/Company-EditProfile.jsx";
-import EditProfile from "./pages/EditProfile"; 
-import SocialProfile from "./pages/SocialProfile";
-import Resume from "./pages/Resume";
-import WorkSpace from "./pages/WorkSpace";
-import Post from "./components/Post"; 
-import Collection from "./components/Collection";
-import Stars from "./components/Stars";
-import Contacts from "./components/Contacts";
+import EditProfile from "./pages/EditProfile.jsx"; 
+import SocialProfile from "./pages/SocialProfile.jsx";
+import Resume from "./pages/Resume.jsx";
+import WorkSpace from "./pages/WorkSpace.jsx";
+import Post from "./components/Post.jsx"; 
+import Collection from "./components/Collection.jsx";
+import Stars from "./components/Stars.jsx";
+import Contacts from "./components/Contacts.jsx";
 
 
 

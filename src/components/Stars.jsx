@@ -3,18 +3,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "/src/css/style.css";
 import "/src/css/postUser.css";
 import NavbarUser from "/src/components/NavbarEdit-Company"; 
-import Headeruser from "/src/components/HeaderUser";
+import Headeruser from "/src/components/HeaderUser1";
 
 function Stars() {
   const navigate = useNavigate();
-
-
   return (
     <div>
       <NavbarEdit-Company />
 
 {/* Tambahkan HeaderUser di bawah Navbar */}
-<Headeruser />
+<Headeruser1 />
 
       {/* Profile Section */}
       <div className="containerPoto">
