@@ -24,7 +24,7 @@ body {
   position: relative;
   z-index: 5; /* Nilai lebih rendah dari .header */
   top: 30px;
-  margin: -4% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
+  margin: 3% auto; /* Mengatur margin atas dan bawah, lalu memusatkan elemen */
   width: 90vw; /* Mengatur lebar menjadi 90% dari viewport */
   height: 700vh;
   max-height: 1400px;
@@ -96,31 +96,39 @@ body {
   background: rgba(153, 153, 153, 0.26);
   filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));
   backdrop-filter: blur(17px);
-  z-index: 10; /* Nilai z-index lebih tinggi */
+  z-index: 10;
+  overflow: ; 
+  white-space: nowrap;
 }
 
 .containerHeader {
   display: flex;
-  width: auto;
-  padding: 1.7% 3%;
-  display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap; /* Mencegah elemen membungkus ke baris baru */
+  width: 100%;
+  padding: 1% 5%;
+  justify-content: space-evenly;
   align-items: center;
+  gap: 20px; /* Opsional: Menambah jarak antar elemen */
 }
 
 .header-item {
   font-size: 25px;
   font-style: normal;
+  white-space: nowrap;
   font-weight: 400;
   line-height: normal;
+  white-space: nowrap; /* Mencegah teks membungkus ke baris berikutnya */
 }
 
 .header-item.active {
   text-shadow: 0px 0px 5px #b04e75;
   font-style: normal;
+  white-space: nowrap;
   font-weight: 600;
   line-height: normal;
+  white-space: nowrap; /* Menjamin teks tidak membungkus */
 }
+
 
 .containerEdit {
   margin-top: 20px; /* Sesuaikan dengan elemen atas */
