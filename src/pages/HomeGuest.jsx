@@ -159,7 +159,7 @@ function HomeGuest() {
               <div className="job-count">1234 Jobs</div>
             </div>
           </div>
-          <div className="job-card">
+        <div className="job-card">
             <img
               src="src\images\ImageCategory/interfaces.jpg"
               alt="Interfaces Icon"
@@ -174,7 +174,7 @@ function HomeGuest() {
               src="src\images\ImageCategory/strategy.avif"
               alt="Strategy Icon"
             />
-            <div className="job-details">
+        <div className="job-details">
               <div className="job-title">Strategy</div>
               <div className="job-count">1200 Jobs</div>
             </div>

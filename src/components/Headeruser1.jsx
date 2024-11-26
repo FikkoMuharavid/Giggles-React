@@ -4,8 +4,8 @@ import "/src/css/HeaderUser.css";
 
 const Headeruser = () => {
   return (
-    <div className="header">
-      <div className="containerHeader">
+    <div className="headerAvril">
+      <div className="containerHeaderAvril">
         <NavLink
           exact="true"
           activeClassName="active"
@@ -41,8 +41,8 @@ const Headeruser = () => {
       </div>
       <hr
         style={{
-          margin: "0 2%",
-          marginTop: "-4%",
+          margin: "02%",
+          marginTop: "-1%",
           borderWidth: "2px",
         }}
       />

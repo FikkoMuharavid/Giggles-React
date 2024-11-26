@@ -8,9 +8,9 @@ import "/src/css/postUser.css";
 function Collection() {
 
   return (
-    <div>
-        <NavbarEditProff/>  
-
+    <div className="Collection">
+      {/* Navbar */}
+      <NavbarEditProff />
 
       {/* Profile Section */}
       <div className="containerPoto">
@@ -30,8 +30,9 @@ function Collection() {
         </div>
       </div>
 
-      
+      {/* Header */}
       <Headeruser1 />
+
       {/* Project Buttons Section */}
       <div className="containerEditPost">
         <div className="button-container">
@@ -39,24 +40,19 @@ function Collection() {
             <img src="/src/image/img1.png" alt="Button 1" />
           </div>
           <div className="button-item">
-          <img src="/src/image/img2.png" alt="Button 2" />
+            <img src="/src/image/img2.png" alt="Button 2" />
           </div>
           <div className="button-item">
-          <img src="/src/image/img3.png" alt="Button 3" />
+            <img src="/src/image/img3.png" alt="Button 3" />
           </div>
           <div className="button-item">
-          <img src="/src/image/img4.png" alt="Button 4" />
+            <img src="/src/image/img4.png" alt="Button 4" />
           </div>
         </div>
       </div>
-
-      
-        
-           
-  
-     
-      
     </div>
+      
+    
   );
 }
 

@@ -14,7 +14,7 @@ body {
     
     }
   
-    .header {
+    .headerAvril {
       position: absolute;
       margin-top: 2%;
       left: 50%;
@@ -28,7 +28,7 @@ body {
       z-index: 99;
     }
     
-    .containerHeader {
+    .containerHeaderAvril {
       display: flex;
       width: auto;
       padding: 1.7% 3%;

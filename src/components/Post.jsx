@@ -11,7 +11,22 @@ function Post() {
   return (
     <div>
       <NavbarEditProff/>  
-
+      <div className="containerPoto">
+        <div className="profile1">
+          <img
+            src="/src/image/profile.png"
+            alt="Profile image of Kylie Jenner"
+            style={{ width: "95px" }}
+          />
+          <div className="profile-info1">
+            <div className="profile-name1">
+              Kylie Jenner
+              <div className="underline1"></div> {/* Garis di bawah nama */}
+            </div>
+            <div className="additional-text1">Designer</div>
+          </div>
+        </div>
+      </div>
 {/* Call HeaderUser component */}
 <Headeruser1 />
 
