@@ -121,7 +121,7 @@ function Jobs() {
               <div
                 style={{
                   textAlign: "center",
-                  fontSize: "1rem",
+                 
                   color: "#B04E75",
                   width: "154px",
                   fontSize: "1.2rem",
