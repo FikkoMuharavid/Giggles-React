@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "/src/css/style.css";
-import "/src/css/navbar.css";
+import NavbarEditProff from "/src/components/NavbarEditProff.jsx";
+import Headeruser1 from "/src/components/Headeruser1.jsx";
 import "/src/css/postUser.css";
 
 function Contacts() {
@@ -9,53 +10,10 @@ function Contacts() {
 
   return (
     <div>
-      <nav>
-        <div className="navMenu">
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/gallery"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Gallery
-          </NavLink>
-          <NavLink
-            to="/jobs"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Jobs
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            About Us
-          </NavLink>
-        </div>
+     <NavbarEditProff/>  
 
-        <div className="navGiggle">
-          <div className="giggle">Giggle’s</div>
-        </div>
+{/* Call HeaderUser component */}
 
-        {/* Button Edit */}
-        <div className="navRight">
-          <button className="signUp" onClick={() => navigate("/EditProfile")}>
-            Edit
-          </button>
-        </div>
-      </nav>
 
       {/* Profile Section */}
       <div className="containerPoto">
@@ -75,45 +33,7 @@ function Contacts() {
         </div>
       </div>
 
-      <div className="header">
-        <div className="containerHeader">
-          <NavLink
-            to="/Post"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Post
-          </NavLink>
-          <NavLink
-            to="/Collection"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Collection
-          </NavLink>
-          <NavLink
-            to="/Stars"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Stars
-          </NavLink>
-          <NavLink
-            to="/Contacts"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Contacts
-          </NavLink>
-        </div>
-        <hr
-          style={{ margin: "0 2%", marginTop: "-0.5%", borderWidth: "2px" }}
-        />
-      </div>
+      <Headeruser1 />
 
       {/* Contact Section */}
       <div className="containerEditPost">

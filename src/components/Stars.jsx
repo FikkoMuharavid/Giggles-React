@@ -2,58 +2,14 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "/src/css/style.css";
 import "/src/css/postUser.css";
+import NavbarEditProff from "/src/components/NavbarEditProff.jsx";
+import Headeruser1 from "/src/components/Headeruser1.jsx";
 
 function Stars() {
   const navigate = useNavigate();
   return (
     <div>
-      <nav>
-        <div className="navMenu">
-          <NavLink
-            to="/home"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/gallery"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Gallery
-          </NavLink>
-          <NavLink
-            to="/jobs"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            Jobs
-          </NavLink>
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "menuActive" : "menuNonActive"
-            }
-          >
-            About Us
-          </NavLink>
-        </div>
-
-        <div className="navGiggle">
-          <div className="giggle">Giggle’s</div>
-        </div>
-
-        {/* Button Edit */}
-        <div className="navRight">
-          <button className="signUp" onClick={() => navigate("/EditProfile")}>
-            Edit
-          </button>
-        </div>
-      </nav>
+<NavbarEditProff/>  
 
 
       {/* Profile Section */}
@@ -73,46 +29,11 @@ function Stars() {
           </div>
         </div>
       </div>
+      
 
-      <div className="header">
-        <div className="containerHeader">
-          <NavLink
-            to="/Post"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Post
-          </NavLink>
-          <NavLink
-            to="/Collection"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Collection
-          </NavLink>
-          <NavLink
-            to="/Stars"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Stars
-          </NavLink>
-          <NavLink
-            to="/Contacts"
-            className={({ isActive }) =>
-              isActive ? "header-item active" : "header-item"
-            }
-          >
-            Contacts
-          </NavLink>
-        </div>
-        <hr
-          style={{ margin: "0 2%", marginTop: "-0.5%", borderWidth: "2px" }}
-        />
-      </div>
+{/* Call HeaderUser component */}
+<Headeruser1 />
+      
 
       {/* New Job Card Section */}
       <div className="containerEditPost">

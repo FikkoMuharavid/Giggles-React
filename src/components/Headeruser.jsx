@@ -4,6 +4,7 @@ import "/src/css/HeaderUser.css";
 
 const Headeruser = () => {
   return (
+    <div className="Headeruser">
     <div className="header">
       <div className="containerHeader">
         <NavLink
@@ -42,11 +43,14 @@ const Headeruser = () => {
       <hr
         style={{
           margin: "0 2%",
-          marginTop: "-3%",
-          borderWidth: "2px",
+          marginTop: "-3.5%",
+          borderWidth: "1px",
+          marginLeft: "25px"
         }}
       />
     </div>
+  </div>
+  
   );
 };
 

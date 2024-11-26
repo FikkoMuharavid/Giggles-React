@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "/src/css/style.css";
 import "/src/css/EditProf.css";
-import NavbarUser from "/src/components/NavbarUser"; // Impor NavbarUser
-import Headeruser from "/src/components/Headeruser";
+import NavbarUser from "/src/components/NavbarUser.jsx"; // Impor NavbarUser
+import Headeruser from "/src/components/Headeruser.jsx";
 
 function WorkSpace() {
   const toggleDropdown = () => {

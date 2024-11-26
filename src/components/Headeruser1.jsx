@@ -9,34 +9,34 @@ const Headeruser = () => {
         <NavLink
           exact="true"
           activeClassName="active"
-          to="/EditProfile"
+          to="/Post"
           className="header-item"
         >
-          Edit Profile
+         Post
         </NavLink>
         <NavLink
           exact="true"
           activeClassName="active"
-          to="/SocialProfile"
+          to="/Collection"
           className="header-item"
         >
-          Social Profile
+          Collection
         </NavLink>
         <NavLink
           exact="true"
           activeClassName="active"
-          to="/Resume"
+          to="/Stars"
           className="header-item"
         >
-          Resume
+          Stars
         </NavLink>
         <NavLink
           exact="true"
           activeClassName="active"
-          to="/WorkSpace"
+          to="/Contacts"
           className="header-item"
         >
-          WorkSpace
+          Contacts
         </NavLink>
       </div>
       <hr
