@@ -35,7 +35,7 @@ const NavbarUser = () => {
   ];
 
   const dropdownItems = [
-    { name: "Profile", path: "/EditProfile", icon: "bi bi-person" },
+    { name: "Profile", path: "/Post", icon: "bi bi-person" },
     { name: "Sign Out", path: "#", icon: "bi bi-box-arrow-right" },
   ];
 

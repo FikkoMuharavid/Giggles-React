@@ -2,17 +2,59 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "/src/css/style.css";
 import "/src/css/postUser.css";
-import NavbarUser from "/src/components/NavbarEdit-Company"; 
-import Headeruser from "/src/components/HeaderUser1";
 
 function Stars() {
   const navigate = useNavigate();
   return (
     <div>
-      <NavbarEdit-Company />
+      <nav>
+        <div className="navMenu">
+          <NavLink
+            to="/home"
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            Gallery
+          </NavLink>
+          <NavLink
+            to="/jobs"
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            Jobs
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "menuActive" : "menuNonActive"
+            }
+          >
+            About Us
+          </NavLink>
+        </div>
 
-{/* Tambahkan HeaderUser di bawah Navbar */}
-<Headeruser1 />
+        <div className="navGiggle">
+          <div className="giggle">Giggle’s</div>
+        </div>
+
+        {/* Button Edit */}
+        <div className="navRight">
+          <button className="signUp" onClick={() => navigate("/EditProfile")}>
+            Edit
+          </button>
+        </div>
+      </nav>
+
 
       {/* Profile Section */}
       <div className="containerPoto">
@@ -102,6 +144,7 @@ function Stars() {
         </div>
       </div>
     </div>
+    
   );
 }
 

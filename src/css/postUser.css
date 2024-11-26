@@ -227,7 +227,7 @@ body {
     .job-card {
       display: flex;
       align-items: center;
-      padding: 40px;
+      padding: 100px 40px; /* Padding atas dan bawah lebih besar */
       border-radius: 20px;
       background: rgba(153, 153, 153, 0.26);
       backdrop-filter: blur(17px);
@@ -240,6 +240,7 @@ body {
       left: 50%;
       transform: translate(-50%, -50%);
   }
+  
   
   /* Gambar pada Kartu */
   .job-image {

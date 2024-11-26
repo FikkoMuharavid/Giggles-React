@@ -42,7 +42,7 @@ const Headeruser = () => {
       <hr
         style={{
           margin: "0 2%",
-          marginTop: "-4%",
+          marginTop: "-3%",
           borderWidth: "2px",
         }}
       />
