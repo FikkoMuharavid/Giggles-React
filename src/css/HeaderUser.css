@@ -13,13 +13,13 @@
   z-index: 10;
 }
 
-.Headeruser .containerHeader {
+.Headeruser .containerHeaderAvril {
   display: flex;
   flex-wrap: nowrap; /* Mencegah elemen membungkus */
   justify-content: space-evenly; /* Elemen tersebar merata */
   align-items: center; /* Menyelaraskan elemen secara vertikal */
   gap: 20px; /* Jarak antar elemen */
-  width: 100%; /* Lebar penuh */
+  width: ; /* Lebar penuh */
   min-width: 400px; /* Menambahkan lebar minimum untuk mencegah elemen turun */
 }
 

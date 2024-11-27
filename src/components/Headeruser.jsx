@@ -4,7 +4,7 @@ import "/src/css/HeaderUser.css";
 
 const Headeruser = () => {
   return (
-    <div className="Headeruser">
+    <div className="HeaderuserAvril">
     <div className="headerAvril">
       <div className="containerHeaderAvril">
         <NavLink

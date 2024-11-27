@@ -37,7 +37,7 @@ function Stars() {
 
       {/* New Job Card Section */}
       <div className="containerEditPost">
-        <div className="job-card">
+        <div className="job-cardAvril">
           <div className="job-image">
             <img src="/src/image/jobsStars.png" alt="jobsStars" />
             <div className="rating">

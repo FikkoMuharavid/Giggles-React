@@ -129,7 +129,7 @@ section {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 6%;
+  padding: 1%;
   height: 10vh;
   border-radius: 20px;
   background: rgba(153, 153, 153, 0.26);
