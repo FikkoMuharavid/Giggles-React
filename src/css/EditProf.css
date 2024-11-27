@@ -101,7 +101,7 @@ body {
   white-space: nowrap;
 } */
 
-.containerHeader {
+.containerHeaderAvril {
   display: flex;
   flex-wrap: nowrap; /* Mencegah elemen membungkus ke baris baru */
   width: 100%;
