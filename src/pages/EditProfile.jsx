@@ -2,14 +2,14 @@ import React from "react";
 import "/src/css/style.css"; // Pastikan path ini benar
 import "/src/css/EditProf.css"; // Pastikan path ini benar
 import { NavLink } from "react-router-dom"; // Import NavLink
-import NavbarUser from "/src/components/NavbarUser"; // Impor NavbarUser
+import Navbar from "/src/components/Navbar"; // Impor NavbarUser
 import Headeruser from "/src/components/Headeruser";
 
 function EditProfile() {
   return (
     <div>
       {/* Tambahkan NavbarUser di bagian atas */}
-      <NavbarUser />
+      <Navbar />
 
       {/* Tambahkan HeaderUser di bawah Navbar */}
       <Headeruser />
@@ -36,16 +36,16 @@ function EditProfile() {
             </button>
           </div>
 
-          <div className="form-grid">
+          <div className="form-grid-avril">
             <div className="form-group">
               <h3>Name</h3>
               <input type="text" placeholder="Enter your name" />
             </div>
-            <div className="form-group">
+            <div className="form-group" style={{ width: "96%" }}>
               <h3>Location</h3>
               <input type="text" placeholder="Enter your location" />
             </div>
-            <div className="form-group">
+            <div className="form-group" style={{ width: "96%" }}>
               <h3>Bio</h3>
               <input type="text" placeholder="Enter your bio" />
             </div>

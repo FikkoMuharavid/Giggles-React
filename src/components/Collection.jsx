@@ -8,7 +8,7 @@ import "/src/css/postUser.css";
 function Collection() {
 
   return (
-    <div className="Collection">
+    <div className="avril Collection">
       {/* Navbar */}
       <NavbarEditProff />
 
@@ -49,7 +49,7 @@ function Collection() {
             <img src="/src/image/img4.png" alt="Button 4" />
           </div>
         </div>
-      </div>
+      </div><br />
     </div>
       
     

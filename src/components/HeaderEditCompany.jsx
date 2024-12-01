@@ -2,13 +2,19 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../styles/Company-EditProfile.css";
 
+{/* <NavLink
+exact
+activeClassName="active"
+to="/companyabout"
+className="header-item"
+> */}
 const HeaderEditCompany = () => {
   return (
     <div className="company2 header2">
       <div className="containerHeader2">
         <NavLink
           exact="true"
-          activeClassName="active"
+          activeClassName="active2"
           to="/company-edit-profile"
           className="header-item2"
         >
@@ -16,18 +22,19 @@ const HeaderEditCompany = () => {
         </NavLink>
         <NavLink
           exact="true"
-          activeClassName="active"
+          activeClassName="active2"
           to="/company-edit-about"
-          className="header-item2 active"
+          className="header-item2"
         >
           About
         </NavLink>
         <NavLink
           exact="true"
-          activeClassName="active"
+          activeClassName="active2"
           to="/company-edit-postjob"
           className="header-item2"
         >
+          
           Post a Job
         </NavLink>
       </div>

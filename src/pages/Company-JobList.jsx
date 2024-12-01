@@ -62,7 +62,7 @@ const CompanyJobList = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div><br />
     </div>
   );
 };

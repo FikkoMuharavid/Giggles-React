@@ -1,7 +1,9 @@
 import React from "react";
 import Login from "./pages/Auth-Login.jsx";
+import { ProtectedRoute } from "./components/ProtectedRoute";
+import { AuthProvider } from "./AuthContext";
 import HomeGuest from "./pages/HomeGuest.jsx";
-import HomeUser from "./pages/HomeUser.jsx";
+import HomeUser from "./pages/Home.jsx";
 import HomeCompany from "./pages/HomeCompany.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WelcomePage from "./pages/WelcomePage.jsx";
@@ -40,6 +42,7 @@ import Contacts from "./components/Contacts.jsx";
 
 function App() {
   return (
+    <AuthProvider>
     <BrowserRouter future={{ v7_startTransition: true }}>
       <Routes>
         <Route path="/" element={<WelcomePage />} />
@@ -51,8 +54,10 @@ function App() {
         <Route path="/forgotpasw2" element={<ForgotPasw2 />} />
         <Route path="/forgotpasw3" element={<ForgotPasw3 />} />
         <Route path="/homeguest" element={<HomeGuest />} />
-        <Route path="/homeuser" element={<HomeUser />} />
-        <Route path="/homecompany" element={<HomeCompany />} />
+        <Route path="/home" element={<HomeUser />} />
+        {/* <Route path="/homeUser" element={ <ProtectedRoute roleRequired="user"> <HomeUser /> </ProtectedRoute> } /> */}
+        {/* <Route path="/homecompany" element={<HomeCompany />} /> */}
+        {/* <Route path="/homeCompany" element={ <ProtectedRoute roleRequired="company"> <HomeCompany /> </ProtectedRoute> } /> */}
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -67,10 +72,10 @@ function App() {
         <Route path="/company-edit-postjob" element={<CompanyEditPostJob />} />
         <Route path="/company-edit-profile" element={<CompanyEditProfile />} />
         <Route path="/EditProfile" element={<EditProfile />} />
-      <Route path="/SocialProfile" element={<SocialProfile />} />
-      <Route path="/Resume" element={<Resume/>} />
-      <Route path="/WorkSpace" element={<WorkSpace/>} />
-      <Route path="/Post" element={<Post />} />
+        <Route path="/SocialProfile" element={<SocialProfile />} />
+        <Route path="/Resume" element={<Resume/>} />
+        <Route path="/WorkSpace" element={<WorkSpace/>} />
+        <Route path="/Post" element={<Post />} />
         <Route path="/Collection" element={<Collection />} />
         <Route path="/Stars" element={<Stars />} />
         <Route path="/Contacts" element={<Contacts />} />
@@ -78,6 +83,7 @@ function App() {
 
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }
 

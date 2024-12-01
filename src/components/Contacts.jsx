@@ -9,7 +9,7 @@ function Contacts() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="avril">
      <NavbarEditProff/>  
 
 {/* Call HeaderUser component */}
@@ -67,7 +67,7 @@ function Contacts() {
             </div>
           </div>
         </div>
-      </div>
+      </div><br />
     </div>
   );
 }

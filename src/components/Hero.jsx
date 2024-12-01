@@ -1,4 +1,4 @@
-import Navbar from "./NavbarUser";
+import Navbar from "../components/Navbar";
 
 function Hero({ title, subtitle, children }) {
   return (
@@ -6,7 +6,7 @@ function Hero({ title, subtitle, children }) {
       <Navbar />
       <div className="containerHeader">
         <h2>{title}</h2>
-        <p>{subtitle}</p>
+        <p style={{ padding: "0 10%" }}>{subtitle}</p>
 
         {children}
       </div>

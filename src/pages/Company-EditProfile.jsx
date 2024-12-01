@@ -1,12 +1,12 @@
 import React from "react";
-import NavbarCompany from "../components/NavbarCompany";
+import Navbar from "../components/Navbar";
 import HeaderEditCompany from "../components/HeaderEditCompany";
 import "../styles/company-editprofile.css";
 
 const EditProfileCompany = () => {
   return (
     <>
-      <NavbarCompany />
+      <Navbar />
       <div className="company2">
       <HeaderEditCompany />
       <div className="containerEditProfile">
@@ -48,7 +48,7 @@ const EditProfileCompany = () => {
           </div>
           <button className="buttonSave">Save Profile</button>
         </div>
-      </div>
+      </div><br />
       </div>
     </>
   );

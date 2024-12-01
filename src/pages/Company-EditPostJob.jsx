@@ -1,11 +1,11 @@
 import React from "react";
 import HeaderEditCompany from "../components/HeaderEditCompany";
-import NavbarCompany from "../components/NavbarCompany";
+import Navbar from "../components/Navbar";
 
 function CompanyEditPostJob() {
   return (
     <>
-      <NavbarCompany />
+      <Navbar />
       <div className="company2">
       <HeaderEditCompany />
         <div className="containerEditPost">
@@ -118,7 +118,7 @@ function CompanyEditPostJob() {
             <button className="buttonSave">Save Profile</button>
           </div>
         </div>
-      </div>
+      </div><br />
     </>
   );
 }

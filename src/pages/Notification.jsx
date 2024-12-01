@@ -1,12 +1,12 @@
 import React from "react";
-import NavbarGuest from "../components/NavbarGuest";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/Notification.css";
 
 function Notification() {
   return (
     <div className="notifpage">
-      <NavbarGuest />
+      <Navbar />
       <div className="container">
         <h2>Notification</h2>
         <br />

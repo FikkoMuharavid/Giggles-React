@@ -1,15 +1,21 @@
 import React from "react";
-import NavbarGuest from "../components/NavbarUser";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/User-PostCreation.css";
 
 function PostCreation() {
   return (
     <div className="postcreationpage">
-      <NavbarGuest />
+      <Navbar />
       <div className="postcreation">
         <div className="tittle">Post Your Creation</div>
-        <hr style={{ marginTop: "13px", border: "2px solid white", boxShadow: "0px 0px 4px 0px rgba(255, 255, 255, 0.25)" }} />
+        <hr
+          style={{
+            marginTop: "13px",
+            border: "2px solid white",
+            boxShadow: "0px 0px 4px 0px rgba(255, 255, 255, 0.25)",
+          }}
+        />
 
         <div className="form" style={{ marginTop: "30px" }}>
           <h3>Tittle</h3>
@@ -78,4 +84,3 @@ function PostCreation() {
 }
 
 export default PostCreation;
-

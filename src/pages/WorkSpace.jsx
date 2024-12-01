@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "/src/css/style.css";
 import "/src/css/EditProf.css";
-import NavbarUser from "/src/components/NavbarUser.jsx"; // Impor NavbarUser
+import Navbar from "/src/components/Navbar"; // Impor NavbarUser
 import Headeruser from "/src/components/Headeruser.jsx";
 
 function WorkSpace() {
@@ -36,7 +36,7 @@ function WorkSpace() {
     <div>
       {/* Navigation Bar */}
       {/* Call NavbarUser component */}
-      <NavbarUser />  
+      <Navbar />  
 
       {/* Call HeaderUser component */}
       <Headeruser />
@@ -45,7 +45,7 @@ function WorkSpace() {
         <div className="containerEdit2">
           <h3>Work Preferences</h3>
           <div className="divider"></div>
-          <div className="form-grid">
+          <div className="form-grid-avril">
             <div className="form-group">
               <h3>Freelance</h3>
               <div className="options-group">

@@ -8,7 +8,7 @@ import Headeruser1 from "/src/components/Headeruser1.jsx";
 function Stars() {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="avril">
 <NavbarEditProff/>  
 
 
@@ -36,7 +36,7 @@ function Stars() {
       
 
       {/* New Job Card Section */}
-      <div className="containerEditPost">
+      <div className="containerEditPost" style={{ paddingTop: "10vh" }}>
         <div className="job-cardAvril">
           <div className="job-image">
             <img src="/src/image/jobsStars.png" alt="jobsStars" />
@@ -63,7 +63,7 @@ function Stars() {
             </div>
           </div>
         </div>
-      </div>
+      </div><br />
     </div>
     
   );

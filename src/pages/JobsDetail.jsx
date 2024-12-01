@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "../styles/job-detail.css";
 import Spinner from "../components/Spiner";
-import Navbar from "../components/NavbarUser";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 function JobsDetail() {

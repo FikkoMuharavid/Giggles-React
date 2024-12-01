@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"; // Import NavLink dari React Router
 import "/src/css/style.css";
 
 import "/src/css/EditProf.css";
-import NavbarUser from "/src/components/NavbarUser"; // Impor NavbarUser
+import Navbar from "/src/components/Navbar"; // Impor NavbarUser
 import Headeruser from "/src/components/Headeruser";
 
 function SocialProfile() {
@@ -42,7 +42,7 @@ function SocialProfile() {
 
       {/* Navigation Bar */}
       {/* Call NavbarUser component */}
-      <NavbarUser />  
+      <Navbar />  
 
       {/* Call HeaderUser component */}
       <Headeruser />
@@ -53,7 +53,7 @@ function SocialProfile() {
           <div className="new-profile">
             <h3>Social Profile</h3>
             <div className="divider"></div>
-            <div className="form-grid">
+            <div className="form-grid-avril">
               <div className="form-group">
                 <h3>LinkedIn</h3>
                 <input

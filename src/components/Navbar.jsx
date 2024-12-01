@@ -1,16 +1,20 @@
 import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 import "../styles/navbar.css";
 
 const NavbarUser = () => {
+  const { user } = useAuth();
+
   const [dropdownOpen, setDropdownOpen] = React.useState(false);
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setDropdownOpen(!dropdownOpen);
   };
 
   const closeDropdown = (event) => {
-    // Close dropdown if clicked outside profile icon and dropdown menu
     if (
       !event.target.closest(".profile-icon") &&
       !event.target.closest(".dropdown-menu")
@@ -27,17 +31,34 @@ const NavbarUser = () => {
     };
   }, []);
 
+  const handleLogout = () => {
+    // Hapus token dari localStorage
+    localStorage.removeItem("token");
+
+    // Redirect ke halaman login
+    navigate("/homeguest");
+  };
+
   const navItems = [
-    { name: "Home", path: "/homeguest" },
+    { name: "Home", path: "/home" },
     { name: "Gallery", path: "/gallery" },
     { name: "Jobs", path: "/jobs" },
     { name: "About Us", path: "/aboutus" },
   ];
 
   const dropdownItems = [
-    { name: "Profile", path: "/companyabout", icon: "bi bi-person" },
-    { name: "Sign Out", path: "#", icon: "bi bi-box-arrow-right" },
+    {
+      name: "Profile",
+      path: user.accountType === "company" ? "/companyabout" : "/post",
+      icon: "bi bi-person",
+    },
+    { name: "Sign Out", action: handleLogout, icon: "bi bi-box-arrow-right" },
   ];
+  
+  // const dropdownItems = [
+  //   { name: "Profile", path: "/Post", icon: "bi bi-person" },
+  //   { name: "Sign Out", action: handleLogout, icon: "bi bi-box-arrow-right" }, // Aksi logout
+  // ];
 
   return (
     <nav>
@@ -80,10 +101,15 @@ const NavbarUser = () => {
           {dropdownOpen && (
             <div className="dropdown-menu" style={{ zIndex: 10000 }}>
               {dropdownItems.map((item, index) => (
-                <NavLink key={index} to={item.path} className="dropdown-item">
+                <div
+                  key={index}
+                  className="dropdown-item"
+                  onClick={item.action || (() => navigate(item.path))}
+                  style={{ cursor: "pointer" }}
+                >
                   <span className={item.icon}></span>
                   <p>{item.name}</p>
-                </NavLink>
+                </div>
               ))}
             </div>
           )}

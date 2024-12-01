@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../css/style.css"; // Ensure this is the correct path
 import "../css/EditProf.css"; // Ensure this is the correct path
-import NavbarUser from "../components/NavbarUser";
+import Navbar from "../components/Navbar";
 import Headeruser from "../components/Headeruser";
 
 function Resume() {
@@ -20,7 +20,7 @@ function Resume() {
   return (
     <div>
       {/* NavbarUser and HeaderUser should be rendered correctly */}
-      <NavbarUser />
+      <Navbar />
       <Headeruser />
 
       <div className="containerEditProfileup2">
@@ -28,7 +28,7 @@ function Resume() {
           <div className="">
             <h3>Resume</h3>
             <div className="divider"></div>
-            <div className="form-grid">
+            <div className="form-grid-avril">
               <div className="form-group">
                 <h3>Email</h3>
                 <input type="text" placeholder="Enter your Email" />
@@ -42,7 +42,10 @@ function Resume() {
                   style={{ display: "none" }}
                 />
                 <label htmlFor="resume-upload">
-                  <button className="btnSecondary" style={{ marginTop: "10px" }}>
+                  <button
+                    className="btnSecondary"
+                    style={{ marginTop: "10px" }}
+                  >
                     Upload Resume
                   </button>
                 </label>

@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarCompany from "../components/NavbarCompany";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/HomeGuest.css";
 
@@ -7,7 +7,7 @@ function HomeCompany() {
   return (
     <div className="homeGuest">
       <header>
-        <NavbarCompany />
+        <Navbar />
         <div className="containerHeader">
           <h2>
             Designed for impact, built

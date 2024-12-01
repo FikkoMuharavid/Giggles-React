@@ -1,12 +1,12 @@
 import React from "react";
-import NavbarCompany from "../components/NavbarCompany";
+import Navbar from "../components/Navbar";
 import "../styles/company-editprofile.css";
 import HeaderEditCompany from "../components/HeaderEditCompany";
 
 function CompanyEditAbout() {
   return (
     <>
-      <NavbarCompany />
+      <Navbar />
       <div className="company2">
         
         <HeaderEditCompany />
@@ -44,7 +44,7 @@ function CompanyEditAbout() {
             <button className="buttonSave">Save Profile</button>
           </div>
         </div>
-      </div>
+      </div><br />
     </>
   );
 }

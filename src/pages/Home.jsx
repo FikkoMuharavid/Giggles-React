@@ -1,5 +1,5 @@
 import React from "react";
-import NavbarUser from "../components/NavbarUser";
+import NavbarUser from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../styles/HomeGuest.css";
 

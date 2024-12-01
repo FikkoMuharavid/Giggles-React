@@ -48,7 +48,7 @@ function CompanyAbout() {
             </div>
           </div>
         </div>
-      </div>
+      </div><br />
     </div>
   );
 }

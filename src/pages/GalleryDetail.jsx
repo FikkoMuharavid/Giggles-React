@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
 import Carousel from "../components/Carousel";
 import "../styles/gallery-detail.css";
-import Navbar from "../components/NavbarGuest";
+import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const GalleryDetail = () => {

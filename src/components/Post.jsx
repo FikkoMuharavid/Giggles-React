@@ -6,11 +6,9 @@ import Headeruser1 from "/src/components/Headeruser1.jsx";
 import "/src/css/postUser.css";
 
 function Post() {
-  
-
   return (
-    <div>
-      <NavbarEditProff/>  
+    <div className="avril">
+      <NavbarEditProff />
       <div className="containerPoto">
         <div className="profile1">
           <img
@@ -27,11 +25,10 @@ function Post() {
           </div>
         </div>
       </div>
-{/* Call HeaderUser component */}
-<Headeruser1 />
+      {/* Call HeaderUser component */}
+      <Headeruser1 />
 
       {/* Profile Section */}
-      
 
       {/* Project Buttons Section */}
       <div className="containerEditPost">
@@ -40,23 +37,16 @@ function Post() {
             <img src="/src/image/Projek1.png" alt="Button 1" />
           </div>
           <div className="button-item">
-          <img src="/src/image/Projek2.png" alt="Button 2" />
+            <img src="/src/image/Projek2.png" alt="Button 2" />
           </div>
           <div className="button-item">
-          <img src="/src/image/Projek3.png" alt="Button 3" />
+            <img src="/src/image/Projek3.png" alt="Button 3" />
           </div>
           <div className="button-item">
-          <img src="/src/image/Projek4.png" alt="Button 4" />
+            <img src="/src/image/Projek4.png" alt="Button 4" />
           </div>
         </div>
-      </div>
-
-      
-        
-           
-  
-     
-      
+      </div><br />
     </div>
   );
 }

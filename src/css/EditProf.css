@@ -35,7 +35,7 @@ body {
   margin-left: 4.5%;
 }
 
-.containerEdit {
+.containerEditwork .containerEdit {
   width: 115%;
   max-width: 2000px;
   padding: 20px;
@@ -45,15 +45,7 @@ body {
   left: -15%; /* Menggeser ke kiri */
 }
 
-.containerEdit {
-  width: 115%;
-  max-width: 1600px;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
-  position: relative;
-  left: -15%; /* Menggeser ke kiri */
-}
+
 
 .containerEditSocialProfile {
   margin: 5% 4%;
@@ -237,8 +229,9 @@ h3 {
   flex-direction: column;
 }
 
-input {
+.form-grid-avril input {
   margin-top: 10px;
+  width: 96%;
   padding: 25px;
   border-radius: 10px;
   border: none;
@@ -249,12 +242,12 @@ input {
   font-size: 20px;
 }
 
-input[placeholder="Enter your location"] {
+.form-grid-avril input[placeholder="Enter your location"] {
   width: 100%; /* Lebar penuh kontainer */
   height: 20px; /* Atur tinggi sesuai keinginan */
 }
 
-input[placeholder="Enter your bio"] {
+.form-grid-avril input[placeholder="Enter your bio"] {
   width: 100%; /* Lebar penuh kontainer */
   height: 60px; /* Atur tinggi sesuai keinginan */
 }
@@ -530,12 +523,12 @@ input[type="radio"]:checked + .label-text + .radio-circle::after {
   gap: 10px;
 }
 
-input {
+/* input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
+} */
 
 .at-text {
   margin: 0 5px;
