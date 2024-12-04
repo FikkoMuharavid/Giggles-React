@@ -6,8 +6,7 @@ import accountRoutes from "./routes/accountRoutes.mjs";
 import loginUserRoutes from "./routes/loginUserRoutes.mjs";
 import forgotPaswRoutes from "./routes/forgotPaswRoutes.mjs";
 import notificationRoutes from "./routes/notificationRoutes.mjs";
-import aboutUsRoutes from "./routes/aboutUsRoutes.mjs";
-import userPostCreationRoutes from "./routes/UserPostCreationRoutes.mjs"; // Perbaiki nama import
+import userPostCreationRoutes from "./routes/UserPostCreationRoutes.mjs"; 
 
 const app = express();
 const PORT = 5000;
@@ -26,7 +25,6 @@ app.use("/api/accounts", accountRoutes); // Semua endpoint account akan diakses 
 app.use("/user", loginUserRoutes);
 app.use("/api/forgot-password", forgotPaswRoutes);
 app.use("/api/notifications", notificationRoutes);
-app.use("/api/about-us", aboutUsRoutes);
 app.use("/api/userpostcreation", userPostCreationRoutes); // Sesuaikan nama variabel
 
 // Start server
