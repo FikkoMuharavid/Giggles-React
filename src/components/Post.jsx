@@ -6,11 +6,7 @@ import Headeruser1 from "/src/components/Headeruser1.jsx";
 import "/src/css/postUser.css";
 
 function Post() {
-  const navigate = useNavigate(); // Hook navigasi React Router
-
-  const handleUploadClick = () => {
-    navigate("/upload"); // Ganti "/upload" dengan path halaman tujuan
-  };
+  
   return (
     <div className="avril">
       <NavbarEditProff />
@@ -46,12 +42,13 @@ function Post() {
       Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit
       phasellus mollis sit aliquam sit nullam neque ultrices.
     </p>
-    <button
-                className="/User-PostCreation"
-                onClick={handleUploadClick} // Panggil fungsi untuk navigasi
-              >
-                Upload
-              </button>
+    <NavLink
+  to="/User-PostCreation"  // Ganti dengan path tujuan yang Anda inginkan
+  className="upload-button avril"  // Class CSS untuk tombol
+>
+  Upload
+</NavLink>
+
   </div>
             </div>
       </div><br />
