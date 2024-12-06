@@ -2,15 +2,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("/src/image/Background1.png");
 }
-.avril .containerEditPost {
-  margin: 5% 4%;
-  height: 60vh;
-  max-height: 700px;
-  background: rgba(153, 153, 153, 0.26);
-  filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));
-  backdrop-filter: blur(17px);
-  border-radius: 22px;
-}
+
 
  .headerAvril {
   position: absolute;
@@ -171,17 +163,58 @@ body {
   backdrop-filter: blur(17px);
   border-radius: 22px;
 }
+.button-container1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+ 
+}
+
+.upload-title.avril {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.upload-description.avril {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+}
+.upload-text-section.avril {
+  text-align: center;
+  margin-top: 40px; /* Memberi jarak bagian atas */
+  padding: 20px; /* Memberi ruang dalam di semua sisi */
+}
+
+.upload-button.avril {
+  background-color: #b04e75;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
 .avril .button-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 25px;
+  gap: 15px;
+  margin-top: 70px;
+  padding-top: 130px;
 }
-
+.upload-text-section.avril {
+  text-align: center;
+  margin-top: 20px;
+}
 .avril .button-item {
   width: 20%;
-  height: 35vh;
+  height: 25vh;
   background-color: #222;
   border-radius: 20px;
   filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.5));
@@ -189,7 +222,6 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin-top: 100px;
 }
 
 .avril .button-item img {
@@ -224,6 +256,46 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.job-cardAvril1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 15px;
+  border-radius: 15px;
+  background: rgba(153, 153, 153, 0.26);
+  backdrop-filter: blur(17px);
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.8));
+  width: 70%;
+  max-width: 80%;
+  margin: 50px auto; /* Tambahkan margin-top (20px) */
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+margin-top: 20px;
+}
+
+.avril .containerEditPost {
+  margin: 5% 4%;
+  height: 60vh;
+  max-height: 700px;
+  background: rgba(153, 153, 153, 0.26);
+  filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));
+  backdrop-filter: blur(17px);
+  border-radius: 22px;
+}
+
+.containerEditPost1 {
+  margin: 5% 4%;
+  height: 60vh;
+  max-height: 700px;
+  background: rgba(153, 153, 153, 0.26);
+  filter: drop-shadow(0px 4px 35px rgba(0, 0, 0, 0.8));
+  backdrop-filter: blur(17px);
+  border-radius: 22px;
+  padding-top: 50px;
 }
 
 /* Gambar pada Kartu */
@@ -335,6 +407,8 @@ body {
   color: white;
   height: 60vh; /* Membuat tinggi penuh untuk memusatkan secara vertikal */
 }
+
+
 
 .avril .contact-column {
   display: flex;

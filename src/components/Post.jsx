@@ -6,6 +6,11 @@ import Headeruser1 from "/src/components/Headeruser1.jsx";
 import "/src/css/postUser.css";
 
 function Post() {
+  const navigate = useNavigate(); // Hook navigasi React Router
+
+  const handleUploadClick = () => {
+    navigate("/upload"); // Ganti "/upload" dengan path halaman tujuan
+  };
   return (
     <div className="avril">
       <NavbarEditProff />
@@ -31,23 +36,26 @@ function Post() {
       {/* Profile Section */}
 
       {/* Project Buttons Section */}
-      <div className="containerEditPost">
-        <div className="button-container">
-          <div className="button-item">
-            <img src="/src/image/Projek1.png" alt="Button 1" />
-          </div>
-          <div className="button-item">
-            <img src="/src/image/Projek2.png" alt="Button 2" />
-          </div>
-          <div className="button-item">
-            <img src="/src/image/Projek3.png" alt="Button 3" />
-          </div>
-          <div className="button-item">
-            <img src="/src/image/Projek4.png" alt="Button 4" />
-          </div>
-        </div>
+      <div className="containerEditPost1">
+      <div className="job-cardAvril1">
+        <div className="button-container1">
+          
+          <div className="upload-text-section avril">
+    <h3 className="upload-title avril">Upload your first post!</h3>
+    <p className="upload-description avril">
+      Lorem ipsum dolor sit amet consectetur adipiscing elit mattis sit
+      phasellus mollis sit aliquam sit nullam neque ultrices.
+    </p>
+    <button
+                className="/User-PostCreation"
+                onClick={handleUploadClick} // Panggil fungsi untuk navigasi
+              >
+                Upload
+              </button>
+  </div>
+            </div>
       </div><br />
-    </div>
+    </div>  </div>
   );
 }
 
